@@ -10,14 +10,14 @@
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
+          dl = l != 'dataLayer' ? '&l=' + l : '';
         j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-T685WFN");
+      })(window, document, 'script', 'dataLayer', 'GTM-T685WFN');
     </script>
     <meta charset="utf-8" />
     <meta name="title" content="Contact Us - THT Global" />
@@ -103,26 +103,14 @@
       href="../plugins/system/t4/themes/base/vendors/font-awesome5/css/all.mind308.css?5d4292"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="../media/com_jchoptimize/assets/nz/219a262978a9406b224e654f107da1f64070fa829d61a81b8db3a6a240469766.css"
-    />
+
     <link
       href="../media/mod_languages/css/template.mind308.css?5d4292"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="../media/com_jchoptimize/assets/nz/219a262978a9406b224e654f107da1f677bb597795b2a0d5140d9ac51e817d16.css"
-    />
-    <link
-      href="../media/t4/optimize/css/db55778860fe120ad3f472294d17216f3038.css?032d5804cbe06f2944cd6b0214107289"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="../media/com_jchoptimize/assets/nz/219a262978a9406b224e654f107da1f62aa37c57a6eab808037263309799ccf7.css"
-    />
+
+    <link href="../media/t4/optimize/css/theme.css" rel="stylesheet" />
+
     <link href="../css/site.css" rel="stylesheet" />
   </head>
   <body
@@ -342,8 +330,10 @@
         </div>
       </div>
     </div>
-    <main><div class="t4-wrapper"><div class="t4-content"><div class="t4-content-inner">
-
+    <main>
+      <div class="t4-wrapper">
+        <div class="t4-content">
+          <div class="t4-content-inner">
             <div class="t4-section">
               <div class="t4-section-inner container">
                 <div class="custom">
@@ -675,119 +665,197 @@
               </header>
             </div>
 
-            
-
-
-<div id="t4-main-body" class="t4-section t4-main-body p-0">
-    <div class="t4-section-inner container-fluid"style="padding: 0px;">
-        <!-- Hero Section -->
-        <section class="t4b-section hero-section hero-section--home" style="background-image: url('/images/banner/bg-tracking.jpg'); background-size: cover; background-position: center; background-color: #002e5b;">
-            <div class="t4b-bg-overlay t4b-bg-overlay-image hero-section__overlay" style="background-color:#B0D7EC; background-position: bottom;">&nbsp;</div>
-            <div class="container hero-section__container">
-                <div class="row hero-section__row align-items-center justify-content-center" style="min-height: 400px;">
-                    <div class="col-lg-8 cell hero-section__content text-center">
-                        <h1 class="hero-section__title text-white font-weight-bold mb-3" style="font-size: 3rem;">
-                            Track Your Shipment
+            <div id="t4-main-body" class="t4-section t4-main-body p-0">
+              <div
+                class="t4-section-inner container-fluid"
+                style="padding: 0px"
+              >
+                <!-- Hero Section -->
+                <section
+                  class="t4b-section hero-section hero-section--home"
+                  style="
+                    background-image: url('/images/banner/bg-tracking.jpg');
+                    background-size: cover;
+                    background-position: center;
+                    background-color: #002e5b;
+                  "
+                >
+                  <div
+                    class="t4b-bg-overlay t4b-bg-overlay-image hero-section__overlay"
+                    style="
+                      background-color: #b0d7ec;
+                      background-position: bottom;
+                    "
+                  >
+                    &nbsp;
+                  </div>
+                  <div class="container hero-section__container">
+                    <div
+                      class="row hero-section__row align-items-center justify-content-center"
+                      style="min-height: 400px"
+                    >
+                      <div
+                        class="col-lg-8 cell hero-section__content text-center"
+                      >
+                        <h1
+                          class="hero-section__title text-white font-weight-bold mb-3"
+                          style="font-size: 3rem"
+                        >
+                          Track Your Shipment
                         </h1>
-                        <p class="lead"  style="color: #0093d3; font-size: 1.5rem;">
-                            Real-time visibility for your cargo, from origin to destination.
+                        <p
+                          class="lead"
+                          style="color: #0093d3; font-size: 1.5rem"
+                        >
+                          Real-time visibility for your cargo, from origin to
+                          destination.
                         </p>
+                      </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                  </div>
+                </section>
 
-        <!-- Tracking Tool Section -->
-        <section class="t4b-section py-5 bg-white" style="margin-top: -50px; position: relative; z-index: 10;">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="t4b-box bg-white p-5 shadow-lg border-radius-lg">
-                             <h3 class="text-center text-primary font-weight-bold mb-4">Enter Tracking Number</h3>
-                             <form class="tracking-form">
-                                 <div class="input-group input-group-lg">
-                                     <input type="text" class="form-control border-primary" placeholder="e.g. THT123456789US" aria-label="Tracking Number" style="height: 60px; font-size: 1.2rem;">
-                                     <div class="input-group-append">
-                                         <button class="btn btn-primary px-5 font-weight-bold" type="button" style="font-size: 1.2rem; border: none">TRACK</button>
-                                     </div>
-                                 </div>
-                                 <p class="text-center text-muted mt-3 small">
-                                     Examples: THT12345678, US987654321
-                                 </p>
-                             </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="t4b-section py-5 bg-light">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="font-weight-bold text-dark">Why Track with THT Global?</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="t4b-box text-center p-4 transition-hover hover-lift">
-                            <div class="mb-3">
-                                <i class="fas fa-satellite-dish fa-3x"></i>
+                <!-- Tracking Tool Section -->
+                <section
+                  class="t4b-section py-5 bg-white"
+                  style="margin-top: -50px; position: relative; z-index: 10"
+                >
+                  <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-10">
+                        <div
+                          class="t4b-box bg-white p-5 shadow-lg border-radius-lg"
+                        >
+                          <h3
+                            class="text-center text-primary font-weight-bold mb-4"
+                          >
+                            Enter Tracking Number
+                          </h3>
+                          <form class="tracking-form">
+                            <div class="input-group input-group-lg">
+                              <input
+                                type="text"
+                                class="form-control border-primary"
+                                placeholder="e.g. THT123456789US"
+                                aria-label="Tracking Number"
+                                style="height: 60px; font-size: 1.2rem"
+                              />
+                              <div class="input-group-append">
+                                <button
+                                  class="btn btn-primary px-5 font-weight-bold"
+                                  type="button"
+                                  style="font-size: 1.2rem; border: none"
+                                >
+                                  TRACK
+                                </button>
+                              </div>
                             </div>
-                            <h5 class="font-weight-bold mb-2">Real-Time Updates</h5>
-                            <p class="text-muted">Get up-to-the-minute status updates on your shipment's location and status.</p>
+                            <p class="text-center text-muted mt-3 small">
+                              Examples: THT12345678, US987654321
+                            </p>
+                          </form>
                         </div>
+                      </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="t4b-box text-center p-4 transition-hover hover-lift">
-                            <div class="mb-3">
-                                <i class="fas fa-map-marked-alt fa-3x"></i>
-                            </div>
-                            <h5 class="font-weight-bold mb-2">Global Coverage</h5>
-                            <p class="text-muted">Seamless tracking across all our international routes in US, China, Korea, and Vietnam.</p>
+                  </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="t4b-section py-5 bg-light">
+                  <div class="container">
+                    <div class="text-center mb-5">
+                      <h2 class="font-weight-bold text-dark">
+                        Why Track with THT Global?
+                      </h2>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 mb-4">
+                        <div
+                          class="t4b-box text-center p-4 transition-hover hover-lift"
+                        >
+                          <div class="mb-3">
+                            <i class="fas fa-satellite-dish fa-3x"></i>
+                          </div>
+                          <h5 class="font-weight-bold mb-2">
+                            Real-Time Updates
+                          </h5>
+                          <p class="text-muted">
+                            Get up-to-the-minute status updates on your
+                            shipment's location and status.
+                          </p>
                         </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="t4b-box text-center p-4 transition-hover hover-lift">
-                            <div class="mb-3">
-                                <i class="fas fa-headset fa-3x"></i>
-                            </div>
-                            <h5 class="font-weight-bold mb-2">24/7 Support</h5>
-                            <p class="text-muted">Dedicated support team ready to assist with any shipment inquiries.</p>
+                      </div>
+                      <div class="col-md-4 mb-4">
+                        <div
+                          class="t4b-box text-center p-4 transition-hover hover-lift"
+                        >
+                          <div class="mb-3">
+                            <i class="fas fa-map-marked-alt fa-3x"></i>
+                          </div>
+                          <h5 class="font-weight-bold mb-2">Global Coverage</h5>
+                          <p class="text-muted">
+                            Seamless tracking across all our international
+                            routes in US, China, Korea, and Vietnam.
+                          </p>
                         </div>
+                      </div>
+                      <div class="col-md-4 mb-4">
+                        <div
+                          class="t4b-box text-center p-4 transition-hover hover-lift"
+                        >
+                          <div class="mb-3">
+                            <i class="fas fa-headset fa-3x"></i>
+                          </div>
+                          <h5 class="font-weight-bold mb-2">24/7 Support</h5>
+                          <p class="text-muted">
+                            Dedicated support team ready to assist with any
+                            shipment inquiries.
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
+                </section>
+
+                <!-- CTA Help -->
+                <section class="t4b-section py-5 bg-white border-top">
+                  <div class="container text-center">
+                    <p class="lead mb-3">
+                      Having trouble tracking your package?
+                    </p>
+
+                    <a
+                      href="contact-us.html"
+                      data-anim-type="bounceIn"
+                      class="t4b-box d-inline-flex feature-item t4b-init t4b-animate bounceIn"
+                      style="border-radius: 50px"
+                    >
+                      <p class="ml-2 align-self-center feature-item__text">
+                        Contact Support
+                      </p>
+                    </a>
+                  </div>
+                </section>
+              </div>
             </div>
-        </section>
-        
-        <!-- CTA Help -->
-        <section class="t4b-section py-5 bg-white border-top">
-            <div class="container text-center">
-                <p class="lead mb-3">Having trouble tracking your package?</p>
 
-            <a  href="contact-us.html"  data-anim-type="bounceIn" class="t4b-box d-inline-flex feature-item t4b-init t4b-animate bounceIn" style="border-radius: 50px;">
-            <p class="ml-2 align-self-center feature-item__text"> Contact Support</p>
-        </a>
-            </div>
-        </section>
+            <style>
+              .hover-lift {
+                transition:
+                  transform 0.3s ease,
+                  box-shadow 0.3s ease;
+              }
+              .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+              }
+              .form-control:focus {
+                box-shadow: 0 0 0 0.2rem rgba(0, 46, 91, 0.25);
+                border-color: #002e5b;
+              }
+            </style>
 
-    </div>
-</div>
-
-<style>
-    .hover-lift {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .hover-lift:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
-    }
-    .form-control:focus {
-        box-shadow: 0 0 0 0.2rem rgba(0, 46, 91, 0.25);
-        border-color: #002e5b;
-    }
-</style>
-
-<div id="t4-footer" class="t4-section t4-footer t4-palette-footer">
+            <div id="t4-footer" class="t4-section t4-footer t4-palette-footer">
               <div class="bg-overlay bg-overlay-image">&nbsp;</div>
               <div class="t4-row row">
                 <div class="t4-col footer-1 col-12 col-md-6">
@@ -1093,16 +1161,26 @@
             <a href="javascript:" id="back-to-top"
               ><i class="fa fa-chevron-up"></i
             ></a>
-</div></div></div></main>
-  
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../media/legacy/js/jquery-noconflict.min1fec.js?504da4"></script>
+    <script src="../plugins/system/t4/themes/base/vendors/bootstrap/js/bootstrap.bundle.mind308.js?5d4292"></script>
+    <script src="../media/t4pagebuilder/builder/vendors/animate/t4b-animation.js"></script>
+    <script src="../media/t4pagebuilder/builder/js/t4pagebuilder.js"></script>
+    <script src="../plugins/system/t4/themes/base/vendors/js-offcanvas/_js/js-offcanvas.pkgd.js"></script>
+    <script src="../plugins/system/t4/themes/base/vendors/bodyscrolllock/bodyScrollLock.min.js"></script>
+    <script src="../plugins/system/t4/themes/base/js/offcanvas.js"></script>
+    <script src="../plugins/system/t4/themes/base/js/based308.js?5d4292"></script>
+    <script src="../plugins/system/t4/themes/base/js/megamenu.js"></script>
     <script>
       (function () {
-        if (window["t4b-animation"]) {
-          window["t4b-animation"].init();
+        if (window['t4b-animation']) {
+          window['t4b-animation'].init();
         }
       })();
     </script>
-
-</body>
+  </body>
 </html>
-
