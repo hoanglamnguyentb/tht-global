@@ -65,18 +65,19 @@
 
 html {
   font-family: 'TimesNow', sans-serif !important;
-  /* font-size: 14px; */
+  font-size: 18px;
 }
 
 body {
   font-family: 'TimesNow', sans-serif !important;
   background-color: #9dd6ea !important;
   margin-bottom: 0 !important;
+  font-size: 18px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -128,11 +129,9 @@ h6 {
 
 p {
   font-family: 'TimesNow' !important;
-}
-
-/* .t4-main-body p {
   font-size: 18px;
-} */
+  line-height: 26px;
+}
 
 /* Color Scheme Overrides - Black & Gray */
 :root {
@@ -437,7 +436,7 @@ span.fa {
 
 .tax-service-card__description {
   color: black;
-  /* font-size: 18px; */
+  font-size: 18px;
   font-weight: 400;
   padding: 0 20px 0 20px;
   text-align: left;
@@ -511,7 +510,7 @@ span.fa {
   font-weight: 400;
   margin: 0 0 20px 0;
   line-height: 26px;
-  /* font-size: 18px; */
+  font-size: 18px;
   color: #000;
 }
 
@@ -545,7 +544,7 @@ span.fa {
   border: 0 outset black;
   color: #fff;
   margin: 0 0 0 0;
-  /* font-size: 18px; */
+  font-size: 18px;
   padding: 8px 15px 8px 15px;
   line-height: 26px;
 }
@@ -633,7 +632,7 @@ span.fa {
   color: black;
   text-align: left;
   margin: 0 0 0 0;
-  /* font-size: 18px; */
+  font-size: 18px;
   line-height: 26px;
 }
 
@@ -667,7 +666,7 @@ span.fa {
 }
 
 .feature-item__text {
-  /* font-size: 18px; */
+  font-size: 18px;
   line-height: 26px;
   font-weight: 600;
   color: #fff;
@@ -691,7 +690,7 @@ h1 span {
 }
 
 .highlight-stat__text {
-  /* font-size: 18px; */
+  font-size: 18px;
   line-height: 26px;
   font-weight: 400;
   color: black;
@@ -793,7 +792,7 @@ h1 span {
 }
 
 .service-detail__description {
-  /* font-size: 18px; */
+  font-size: 18px;
   line-height: 26px;
   font-weight: 400;
   color: black;
@@ -873,6 +872,15 @@ h1 span {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+}
+
+.t4-footer,
+.t4-footer p,
+.t4-footer div,
+.t4-footer span,
+.t4-footer a,
+.t4-footer li {
+  font-size: 14px !important;
 }
 
 .t4-footer .footer-1,
@@ -2030,7 +2038,7 @@ h1 span {
 }
 .glac-desc {
   text-align: center;
-  font-size: 13px;
+  font-size: 18px;
 }
 .glac-drop {
   transform: translateY(50%);
@@ -2226,6 +2234,7 @@ h1 span {
   padding: 5px 15px;
   border: unset;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .glac-item > div {
@@ -2451,22 +2460,22 @@ div#iyogyj .t4b-box:hover > p:last-child {
   .jai-map-wrap {
     display: none !important;
   }
-  
+
   /* Hide Service Card Images */
   .tax-service-card__image {
     display: none !important;
   }
-  
+
   /* Hide Large Icons (Progress & Feature Icons) */
   .glac-icon-base {
     display: none !important;
   }
-  
+
   /* Hide QuickBooks Images */
   .glac-accounting__feature-image-box {
     display: none !important;
   }
-  
+
   /* Hide Banking Illustration */
   #ijyvk5 {
     display: none !important;
