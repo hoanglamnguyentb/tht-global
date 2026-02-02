@@ -16,36 +16,48 @@ def clean_file(filepath):
         content = content.replace('class="navbar jch-reduced-dom-container"', 'class="navbar"')
         
         # 2. Remove the template tags but KEEP the content inside
-        pattern = r'<template class="jch-reduced-dom-template">\s*([\s\S]*?)\s*</template>'
+        # Simplified regex: find <template with that class, capture content, find </template>
+        # Note: This assumes nested templates don't exist or are rare. The greedy match might be dangerous if multiple templates are in one file.
+        # But we use non-greedy matching ([\s\S]*?) so it should stop at the first </template>.
         
-        def replace_template(match):
+        # New pattern:
+        # 1. Opening tag: <template ... jch-reduced-dom-template ... >
+        # 2. Content: ( ... )
+        # 3. Closing tag: </template>
+
+        pattern = r'<template[^>]*jch-reduced-dom-template[^>]*>\s*([\s\S]*?)\s*</template>'
+        
+        def replace_with_log(match):
+            # with open("d:\\HoangLam\\MMO\\tht-global\\log.txt", "a", encoding="utf-8") as log:
+            #     log.write(f"Matched in {filepath}\n")
             return match.group(1)
             
-        content = re.sub(pattern, replace_template, content)
+        new_content = re.sub(pattern, replace_with_log, content, flags=re.IGNORECASE)
         
-        if content != original_content:
-            # print(f"Fixing: {filepath}")
+        if new_content != original_content:
             with open(filepath, 'w', encoding='utf-8') as f:
-                f.write(content)
+                f.write(new_content)
             return True
+            
         return False
-        
+
     except Exception as e:
-        print(f"Error processing {filepath}: {e}")
+        with open("d:\\HoangLam\\MMO\\tht-global\\error_log.txt", "a", encoding="utf-8") as log:
+            log.write(f"Error processing {filepath}: {e}\n")
         return False
 
 def main():
-    print("Starting cleanup script...")
+    log_path = r"d:\HoangLam\MMO\tht-global\log.txt"
+    with open(log_path, "w", encoding="utf-8") as f:
+        f.write("Starting cleanup...\n")
+        
     root_dir = r"d:\HoangLam\MMO\tht-global"
     count = 0
     checked_files = 0
     
     for subdir, dirs, files in os.walk(root_dir):
-        # Skip .git or other hidden folders to speed up
         if '.git' in dirs:
             dirs.remove('.git')
-        
-        print(f"Scanning directory: {subdir}")
             
         for file in files:
             if file.endswith(".html"):
@@ -53,9 +65,11 @@ def main():
                 checked_files += 1
                 if clean_file(filepath):
                     count += 1
-                    print(f"Fixed: {file}")
+                    with open(log_path, "a", encoding="utf-8") as f:
+                        f.write(f"Fixed: {file}\n")
                     
-    print(f"Finished. Checked {checked_files} HTML files. Total files fixed: {count}")
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(f"Finished. Checked {checked_files} HTML files. Total fixed: {count}\n")
 
 if __name__ == "__main__":
     main()

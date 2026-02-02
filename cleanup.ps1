@@ -1,45 +1,31 @@
 $files = Get-ChildItem -Path "d:\HoangLam\MMO\tht-global" -Recurse -Filter *.html
+Write-Host "Found $($files.Count) HTML files."
 foreach ($file in $files) {
-    # Check if file is readable
     try {
-        $lines = Get-Content $file.FullName -ErrorAction Stop
+        # -Raw reads the entire file as one string
+        $content = Get-Content $file.FullName -Raw -Encoding UTF8 -ErrorAction Stop
     } catch {
         Write-Host "Could not read $($file.FullName)"
         continue
     }
 
-    $newLines = @()
-    $changed = $false
-    $jchDepth = 0
-    
-    foreach ($line in $lines) {
-        $trimmed = $line.Trim()
-        
-        if ($line -match 'class="navbar jch-reduced-dom-container"') {
-            $newLine = $line -replace 'class="navbar jch-reduced-dom-container"', 'class="navbar"'
-            $newLines += $newLine
-            $changed = $true
-            continue
-        }
-        if ($line -match '<template class="jch-reduced-dom-template">') {
-            $jchDepth++
-            $changed = $true
-            # Skip adding this line
-            continue 
-        }
-        if ($trimmed -eq '</template>') {
-            if ($jchDepth -gt 0) {
-                $jchDepth--
-                $changed = $true
-                # Skip adding this line
-                continue
-            }
-        }
-        $newLines += $line
-    }
-    
-    if ($changed) {
-        $newLines | Set-Content $file.FullName -Encoding UTF8
+    $originalContent = $content
+
+    # 1. Navbar class
+    $content = $content -replace 'class="navbar jch-reduced-dom-container"', 'class="navbar"'
+
+    # 2. Template tags (removing wrapper, keeping content)
+    # Using .NET Regex class for robust replacement
+    # (?s) enables single-line mode (dot matches newline)
+    # (?i) enables case-insensitive matching
+    $pattern = '(?si)<template[^>]*jch-reduced-dom-template[^>]*>\s*(.*?)\s*</template>'
+    $content = [Regex]::Replace($content, $pattern, '$1')
+
+    if ($content -ne $originalContent) {
+        # Write back to file
+        # Using [System.IO.File]::WriteAllText to avoid PowerShell encoding quirks if possible, 
+        # but Set-Content is safer for simple usage. Let's use Set-Content with UTF8.
+        $content | Set-Content $file.FullName -Encoding UTF8 -NoNewline
         Write-Host "Updated: $($file.Name)"
     }
 }

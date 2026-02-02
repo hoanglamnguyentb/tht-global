@@ -130,9 +130,9 @@ p {
   font-family: 'TimesNow' !important;
 }
 
-.t4-main-body p {
+/* .t4-main-body p {
   font-size: 18px;
-}
+} */
 
 /* Color Scheme Overrides - Black & Gray */
 :root {
@@ -430,14 +430,14 @@ span.fa {
   width: 100%;
   padding: 0 20px 0 20px;
   line-height: 26px;
-  font-size: 18px;
+  font-size: 20px;
   text-transform: uppercase;
   font-family: 'FavoritSSENSE-Inter' !important;
 }
 
 .tax-service-card__description {
   color: black;
-  font-size: 18px;
+  /* font-size: 18px; */
   font-weight: 400;
   padding: 0 20px 0 20px;
   text-align: left;
@@ -498,7 +498,7 @@ span.fa {
 
 .banking-service-card__title {
   margin: 0 0 20px 0;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 26px;
   color: #0093d3 !important;
   font-family: 'FavoritSSENSE-Inter', sans-serif !important;
@@ -511,7 +511,7 @@ span.fa {
   font-weight: 400;
   margin: 0 0 20px 0;
   line-height: 26px;
-  font-size: 18px;
+  /* font-size: 18px; */
   color: #000;
 }
 
@@ -545,7 +545,7 @@ span.fa {
   border: 0 outset black;
   color: #fff;
   margin: 0 0 0 0;
-  font-size: 18px;
+  /* font-size: 18px; */
   padding: 8px 15px 8px 15px;
   line-height: 26px;
 }
@@ -603,7 +603,7 @@ span.fa {
   font-weight: 600;
   text-align: left;
   color: black;
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 .review-card__verified {
@@ -633,7 +633,7 @@ span.fa {
   color: black;
   text-align: left;
   margin: 0 0 0 0;
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 26px;
 }
 
@@ -667,7 +667,7 @@ span.fa {
 }
 
 .feature-item__text {
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 26px;
   font-weight: 600;
   color: #fff;
@@ -691,7 +691,7 @@ h1 span {
 }
 
 .highlight-stat__text {
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 26px;
   font-weight: 400;
   color: black;
@@ -785,7 +785,7 @@ h1 span {
 }
 
 .service-detail__title {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 26px;
   font-weight: 700;
   color: #014583;
@@ -793,7 +793,7 @@ h1 span {
 }
 
 .service-detail__description {
-  font-size: 18px;
+  /* font-size: 18px; */
   line-height: 26px;
   font-weight: 400;
   color: black;
@@ -2444,3 +2444,31 @@ div#iyogyj .t4b-box:hover > p:last-child {
   }
 }
 /* Hello */
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 767.98px) {
+  /* Hide Map */
+  .jai-map-wrap {
+    display: none !important;
+  }
+  
+  /* Hide Service Card Images */
+  .tax-service-card__image {
+    display: none !important;
+  }
+  
+  /* Hide Large Icons (Progress & Feature Icons) */
+  .glac-icon-base {
+    display: none !important;
+  }
+  
+  /* Hide QuickBooks Images */
+  .glac-accounting__feature-image-box {
+    display: none !important;
+  }
+  
+  /* Hide Banking Illustration */
+  #ijyvk5 {
+    display: none !important;
+  }
+}

@@ -1,11 +1,34 @@
 import os
 
-css_file = r"d:\HoangLam\MMO\tht-global\media\t4\optimize\css\theme.css"
+css_file = r"d:\HoangLam\MMO\tht-global\css\site.css"
 css_rule = """
-/* Fix for empty col-12 */
-.row .col-12:empty::after {
-    background: none !important;
-    border: none !important;
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 767.98px) {
+  /* Hide Map */
+  .jai-map-wrap {
+    display: none !important;
+  }
+  
+  /* Hide Service Card Images */
+  .tax-service-card__image {
+    display: none !important;
+  }
+  
+  /* Hide Large Icons (Progress & Feature Icons) */
+  .glac-icon-base {
+    display: none !important;
+  }
+  
+  /* Hide QuickBooks Images */
+  .glac-accounting__feature-image-box {
+    display: none !important;
+  }
+  
+  /* Hide Banking Illustration */
+  #ijyvk5 {
+    display: none !important;
+  }
 }
 """
 
