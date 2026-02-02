@@ -1,32 +1,51 @@
 $files = Get-ChildItem -Path "d:\HoangLam\MMO\tht-global" -Recurse -Filter *.html
 Write-Host "Found $($files.Count) HTML files."
+
 foreach ($file in $files) {
+    Write-Host "Processing: $($file.Name)"
     try {
-        # -Raw reads the entire file as one string
-        $content = Get-Content $file.FullName -Raw -Encoding UTF8 -ErrorAction Stop
+        # Read raw content
+        $content = Get-Content $file.FullName -Raw -ErrorAction Stop
     } catch {
-        Write-Host "Could not read $($file.FullName)"
+        Write-Host "ERROR: Could not read $($file.FullName)"
         continue
     }
 
     $originalContent = $content
+    $modified = $false
 
-    # 1. Navbar class
-    $content = $content -replace 'class="navbar jch-reduced-dom-container"', 'class="navbar"'
+    # 1. Fix Navbar Class
+    if ($content -match 'class="navbar jch-reduced-dom-container"') {
+        Write-Host "  - Found navbar class match"
+        $content = $content -replace 'class="navbar jch-reduced-dom-container"', 'class="navbar"'
+        $modified = $true
+    }
 
-    # 2. Template tags (removing wrapper, keeping content)
-    # Using .NET Regex class for robust replacement
-    # (?s) enables single-line mode (dot matches newline)
-    # (?i) enables case-insensitive matching
+    # 2. Fix Template Tags
+    # Regex to find <template class="jch-reduced-dom-template">...content...</template>
+    # (?s) = SingleLine (dot matches newline)
+    # (?i) = CaseInsensitive
     $pattern = '(?si)<template[^>]*jch-reduced-dom-template[^>]*>\s*(.*?)\s*</template>'
-    $content = [Regex]::Replace($content, $pattern, '$1')
+    
+    if ($content -match $pattern) {
+        Write-Host "  - Found template match"
+        $content = [Regex]::Replace($content, $pattern, '$1')
+        $modified = $true
+    }
 
-    if ($content -ne $originalContent) {
-        # Write back to file
-        # Using [System.IO.File]::WriteAllText to avoid PowerShell encoding quirks if possible, 
-        # but Set-Content is safer for simple usage. Let's use Set-Content with UTF8.
-        $content | Set-Content $file.FullName -Encoding UTF8 -NoNewline
-        Write-Host "Updated: $($file.Name)"
+    if ($modified) {
+        try {
+            # Write back with UTF8 encoding explicitly
+            [System.IO.File]::WriteAllText($file.FullName, $content, [System.Text.Encoding]::UTF8)
+            Write-Host "  -> SAVED: $($file.Name)"
+        } catch {
+            Write-Host "  -> ERROR SAVING: $($file.Name) - $_"
+        }
+    } else {
+        # Debugging: check if the 'jch-' string exists at all to see if regex missed it
+        if ($content -match "jch-reduced-dom-template") {
+            Write-Host "  -> WARNING: 'jch-reduced-dom-template' text found but REGEX didn't match!"
+        }
     }
 }
-Write-Host "Done."
+Write-Host "Cleanup process execution finished."
