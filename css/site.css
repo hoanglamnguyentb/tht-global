@@ -2483,3 +2483,69 @@ div#iyogyj .t4b-box:hover > p:last-child {
 }
 
 /* Hello */
+
+/* ===== Hero Section Background Fix ===== */
+/* Fix hero section layout to display 2-column properly */
+#hero-sourcing {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+/* The T4 Page Builder sets background image dynamically on this div */
+/* We just need to ensure it's positioned correctly */
+#hero-sourcing .t4b-bg-overlay-image {
+  /* Don't hardcode background-image - let T4 set it dynamically */
+  background-size: contain !important;
+  background-position: right center !important;
+  background-repeat: no-repeat !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 0;
+  opacity: 1;
+}
+
+#hero-sourcing .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper spacing and height for hero content */
+#hero-sourcing .row {
+  min-height: 500px;
+  align-items: center;
+}
+
+/* Ensure the second column (image area) has proper height on large screens */
+@media (min-width: 992px) {
+  #hero-sourcing .col-lg-5 {
+    min-height: 500px;
+  }
+  
+  #hero-sourcing .col-lg-7 {
+    padding-right: 40px;
+  }
+}
+
+/* On mobile, stack vertically */
+@media (max-width: 991px) {
+  #hero-sourcing {
+    min-height: auto;
+  }
+  
+  #hero-sourcing .t4b-bg-overlay-image {
+    position: relative;
+    left: 0;
+    height: 400px;
+    margin-top: 30px;
+  }
+}
+
+
+/* Phone number font size in header */
+.modalCall {
+  font-size: 14px !important;
+}
